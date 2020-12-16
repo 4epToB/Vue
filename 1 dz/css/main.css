@@ -1,0 +1,31 @@
+#item-card img{
+    width: 30%;    
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+#item-card {
+    display: flex;    
+    
+}
+#descrition{
+    padding-left: 5%;
+    width: 70% 
+}
+#person-card{
+    width: 40%;
+    margin: 100px auto;
+    border: 5px groove rgba(0,0,0,0.57);
+border-radius: 4px 4px 4px 4px;
+}
+#person-card img{
+    width: 40%;
+    margin-top: 20px;
+    margin-left:30%;
+    border: 5px double rgba(164,110,147,0.57);
+border-radius: 16px 16px 16px 16px;
+}
+#person-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

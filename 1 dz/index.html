@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <div id="item-card">
+            <img v-bind:src="link.href" v-bind:alt="link.alt">
+            <div id="descrition">
+                <p>Модель: {{name}}</p>
+                <p>Цена: {{$filters.rub(price)}}</p>
+                <p>Звук: {{sound}}</p>
+                <p>Мощность: {{power}}</p>
+                <p>Частота: {{frequency}}</p>
+            </div>
+        </div>
+        <div id="person-card">
+            <img :src="photo.href" :alt="photo.alt">
+            <div id="person-info">
+                <p>Имя:{{name}}</p>
+                <p>Фамилия:{{surname}}</p>
+                <p>Логин:{{login}}</p>
+                <p>e-mail:{{name}}</p>
+            </div>
+        </div>
+    </main>
+    <script src="js/vue.js"></script>
+</body>
+</html>
