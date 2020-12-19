@@ -1,0 +1,12 @@
+#item-card img{
+    width: 30%;    
+    box-shadow: 5px 5px 15px 5px #000000;
+}
+#item{
+    display: flex;    
+    
+}
+#descrition{
+    padding-left: 5%;
+    width: 70% 
+}

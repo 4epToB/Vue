@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main id="main">
+        <div class="menu">
+            <div @click="swap1" class=menu-item>Новости</div>
+            <div @click="swap2" class=menu-item>О нас</div>
+            <div @click="swap3" class=menu-item>Контакты</div>
+        </div>
+        <div class="content">
+            <div v-if="visible_1">Новостей пока нет</div>
+            <div v-if="visible_2">Мы быстроразвивающаяся молодая компания</div>
+            <div v-if="visible_3">Мы в поисках офиса</div>
+        </div>
+    <script src="js/vue.js"></script>
+</body>
+</html>

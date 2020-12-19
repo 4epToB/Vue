@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body id="main">
+    <p v-if="display" @click="swap">{{defaultText}}</p>
+    <input v-if="!display" type="text" v-model="defaultText"><button v-if="!display" @click="swap">Сохранить</button>
+   
+    <br>
+    <input type="text" v-model="titleSearch">
+    <template v-for="post in posts" :key="post.id">
+        <div v-if="post.title.includes(titleSearch)">
+            <h1>{{post.title}}</h1>
+            <p>{{post.body}}</p>
+        </div>
+    </template>
+    <script src="js/vue.js"></script>
+</body>
+</html>
