@@ -10,7 +10,7 @@
 <body id="main">
     <p v-if="display" @click="swap">{{defaultText}}</p>
     <input v-if="!display" type="text" v-model="defaultText"><button v-if="!display" @click="swap">Сохранить</button>
-   
+
     <br>
     <input type="text" v-model="titleSearch">
     <template v-for="post in posts" :key="post.id">

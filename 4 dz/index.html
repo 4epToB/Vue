@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body >
+    <main id="main">
+    <template v-for="service in services">
+        <input
+        type="checkbox"
+        :value="service.price"
+        v-model="totalPrice"
+        >{{service.name}}-{{service.price}} руб <br>
+    </template>
+    {{totalPrice}} <br>
+    {{sumprice}}<br>
+    
+    <button @click="swap">Отобразить {{label}}</button>
+    <div class="display ">  
+        <div class="div" :class="{plitka:isActive}" v-for="post in posts":key="post.id">
+            <h1>{{post.title}}</h1>
+            <p>{{post.body}}</p>
+        </div>
+    </div>
+    </main>
+    <script src="js/vue.js"></script>
+</body>
+</html>

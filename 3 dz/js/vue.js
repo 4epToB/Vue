@@ -25,5 +25,4 @@ let app=Vue.createApp({
     },
 });
 
-
 let card=app.mount("#main")
