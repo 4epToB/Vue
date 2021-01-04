@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+			}
+			
+        li {
+
+            width: 25%;
+            background-color: lightcoral;
+            height: 30px;
+            text-align: center;
+            height: 2em;
+            line-height: 2em;
+            
+        }
+        
+        a {
+            padding: 5px;
+            text-decoration: none;
+            width: 100%;          
+            
+        }
+        
+        a.router-link-active {
+            color: red;
+        }		
+        .category li{
+            display: inline-block;
+        }
+        .list{
+            width: 50%;
+            width: 100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body >
+    <main id="app">
+        <ul>
+            <li><router-link to="/">Домашняя страница</router-link></li>
+            <li><router-link to="/about">О нас</router-link></li>
+            <li><router-link to="/contacts">Контакты</router-link></li>
+            <li><router-link to="/products">Продукты</router-link></li>
+            
+        </ul>
+        <router-view></router-view>
+    </main>
+    <script>
+        let app=Vue.createApp({
+            data(){
+                return {
+                    GPUs:[
+                        {id:1,name:"gtx 3060",descr:"Нормальная видеокарта"},
+                        {id:2,name:"gtx 3070",descr:"Хорошая видеокарта"},
+                        {id:3,name:"gtx 3080",descr:"Супер видеокарта"},
+                        {id:4,name:"gtx 3090",descr:"Невероятная видеокарта"},
+                    ],
+                    CPUs:[
+                        {id:1,name:"i7-10600"},
+                        {id:2,name:"i7-10700"},
+                        {id:3,name:"i7-10800"},
+                        {id:4,name:"i7-10900"},
+                    ],
+                }
+            },
+        });
+        const NotFound={
+            template: `<h2>Страница не найдена</h2>`
+        };
+        const Home={
+            template: `<h2>Домашняя страница</h2>`
+        };
+        const About={
+            template: `<h2>About</h2>`
+        };
+        const Contacts={
+            template: `<h2>Контакты</h2>`
+        };
+        const GPUs={
+            data(){
+                return {
+                    gpuscopy:JSON.parse(JSON.stringify(myapp.$data.GPUs)),
+                }
+            },
+            template: `
+            
+                <ul class="list">
+                    <li v-for="gpu in gpuscopy">
+                        <router-link :to="{name:'gpusid',params:{id:gpu.id-1}}">
+                            {{gpu.id-1}}.{{gpu.name}}
+                        </router-link>
+                    </li>
+                    <div v-if="($route.params.id)">Описание:{{gpuscopy[$route.params.id].descr}}</div>
+                </ul>
+            
+            `
+        };
+
+        const CPUs={
+            template: `<h2>Продукт CPUs</h2>`
+        };           
+        const Products={
+            
+            methods:{
+
+            },
+            computed:{
+                
+            },
+            template: `
+            <h2>Продукты</h2>
+            <ul class="category">
+                <li><router-link to="/products/gpus">GPUs</router-link></li>
+                <li><router-link to="/products/cpus">CPUs</router-link></li>
+            </ul>
+            <router-view></router-view>
+            `
+        };
+        const routes=[
+            {path:"/", component:Home},
+            {path:"/about", component:About},
+            {path:"/contacts", component:Contacts},
+            {
+                path:'/products', 
+                component:Products,
+                children:[
+                    {
+                        path:'gpus/:id?', 
+                        component:GPUs,
+                        name:'gpusid'
+                    },
+                    {
+                        path:'cpus', 
+                        component:CPUs,
+                    }
+                ],
+            },
+            {path:"/:pathMatch(.*)*", component:NotFound},
+        ];
+        const router = VueRouter.createRouter({
+            history: VueRouter.createWebHistory(),
+            routes: routes
+        });
+        app.use(router);
+        let myapp=app.mount("#app")
+    </script>
+</body>
+</html>
