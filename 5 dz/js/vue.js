@@ -2,7 +2,7 @@ let app=Vue.createApp({
     data(){
         return {
             currentTab:"Home",
-            tabs:["Home","About","Contacts","Staff","Gallery","Music"],
+            tabs:["Home","About","Contacts","Staff","Gallery","Game"],
             images:[
                 {"descr": "Gorillaz",
                 "url": "1.jpg",},
@@ -31,14 +31,7 @@ let app=Vue.createApp({
     }, 
     
 });
-app.component("my-nav",{
-    props:['tabs','currentTab'],
-    template:`
-        <ul>
-            <li v-for="tab in tabs" @click="currentTab = tab" :key="tab">{{tab}}</li>
-        </ul>
-    `,
-}).component("tab-home",{
+app.component("tab-home",{
     template:`<h2>Наши товары</h2>`,
 }).component("tab-about",{
     template:`<h2>Мы магазин крутых товаров</h2>`,
@@ -132,7 +125,7 @@ app.component("tab-gallery",{
         </div>
     `
 })
-app.component("music-gallery",{
-    template:`<h2>Музыкальный плеер</h2>`
+app.component("tab-game",{
+    template:`<h2>Игра на память</h2>`
 })
 let card=app.mount("#main")

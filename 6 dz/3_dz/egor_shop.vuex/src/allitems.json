@@ -1,0 +1,123 @@
+  
+{
+  "products": [
+    {
+      "image": "1.png",
+      "name": "Видеокарта nVidia GeForce RTX3090 Palit GamingPro OC 24Gb (NED3090S19SB-132BA)",
+      "price": 155.200,
+      "id": "123412",
+      "available": 3,
+      "category": "Видеокарты",
+      "manufacturer":"Nvidia"
+    },
+    {
+      "image": "2.jpg",
+      "name": "Внешняя игровая карта GeForce RTX3090 Gigabyte AORUS Gaming Box 24Gb (GV-N3090IXEB-24GD)",
+      "price": 188.750,
+      "id": "T2",
+      "available": 3,
+      "category": "Видеокарты",
+      "manufacturer":"Nvidia"
+    },
+    {
+      "image": "3.jpg",
+      "name": "T-shirt 3",
+      "price": 4200.51524,
+      "id": "T3",
+      "available": 4,
+      "category": "Видеокарты",
+      "manufacturer":"AMD"
+    },
+    {
+      "image": "4.jpg",
+      "name": "T-shirt 4",
+      "price": 5300.1245512,
+      "id": "T4",
+      "available": 3,
+      "category": "Процессоры",
+      "manufacturer":"Intel",
+      "Socket":"INTEL SOCKET 1151 v2"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Процессоры",
+      "manufacturer":"Intel",
+      "Socket":"INTEL SOCKET 1151"
+    },
+    {
+      "image": "6.jpeg",
+      "name": "T-shirt 6",
+      "price": 8700.4124123,
+      "id": "T6",
+      "available": 3,
+      "category": "Процессоры",
+      "manufacturer":"AMD",
+      "Socket":"AMD SOCKET AM4"
+      
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Процессоры",
+      "manufacturer":"AMD",
+      "Socket":"AMD SOCKET AM5"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Жесткие диски",
+      "manufacturer":"Toshiba",
+      "formfactor":"2,5"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Жесткие диски",
+      "manufacturer":"Seagate",
+      "formfactor":"3,5"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Жесткие диски",
+      "manufacturer":"Toshiba",
+      "formfactor":"3,5"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Материнские платы",
+      "manufacturer":"MSI",
+      "Socket":"AMD SOCKET AM5"
+    },
+    {
+      "image": "5.jpg",
+      "name": "T-shirt 5",
+      "price": 6500.3522314,
+      "id": "T5",
+      "available": 4,
+      "category": "Материнские платы",
+      "manufacturer":"ASUS",
+      "Socket":"INTEL SOCKET 1151"
+    }
+  ]
+}

@@ -7,14 +7,14 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/vue-router@4"></script>
     <style>
-        ul {
+        .tab-menu {
             list-style-type: none;
             padding: 0;
             display: flex;
             justify-content: space-around;
 			}
 			
-        li {
+        .tab-menu li {
 
             width: 25%;
             background-color: lightcoral;
@@ -43,18 +43,66 @@
             width: 100%;
             display: inline-block;
         }
+        h2{
+            text-align: center;
+        }
+        .switch-enter-active {
+            
+            animation: switch-in 2s;
+        }
+        .switch-leave-active{
+            
+            animation: switch-in 1s reverse;
+        }
+
+        @keyframes switch-in{
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(2);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        .game{
+            display: flex;
+            width: 400px;
+
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        .game li{
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            text-align: center;
+            line-height: 40px;
+        }
+        .activeitem{
+            background-color: lightcoral;
+        }
+        .game-move{
+            transition: transform 1s;
+        }
     </style>
 </head>
 <body >
     <main id="app">
-        <ul>
+        <ul class="tab-menu">
             <li><router-link to="/">Домашняя страница</router-link></li>
             <li><router-link to="/about">О нас</router-link></li>
             <li><router-link to="/contacts">Контакты</router-link></li>
             <li><router-link to="/products">Продукты</router-link></li>
+            <li><router-link to="/game">Игра</router-link></li>
             
         </ul>
-        <router-view></router-view>
+        <transition name="switch">
+            <router-view></router-view>
+        </transition>
+        
     </main>
     <script>
         let app=Vue.createApp({
@@ -94,7 +142,6 @@
                 }
             },
             template: `
-            
                 <ul class="list">
                     <li v-for="gpu in gpuscopy">
                         <router-link :to="{name:'gpusid',params:{id:gpu.id-1}}">
@@ -127,10 +174,75 @@
             <router-view></router-view>
             `
         };
+        const Game={
+            data(){
+                return {
+                    choose:false,
+                    a:[0],
+                    temp:"",
+                    startPole:[],
+                    coloros:["red","green","grey","blue","pink","red",],
+                    classobj:{
+                        'background-color':'red',
+                    },
+                    activeColor:'red',
+                    fontSize: 15,
+
+                }
+            },
+            methods:{
+                recolor(){
+                    if(this.temp==this.a[this.a.length-1]+1){this.a.push(this.temp)}
+                    
+                },
+                shuffle(){
+                    this.startPole.sort(()=>{return Math.random()*2-1}) 
+                },
+                Startover(){
+                    this.a=[0]
+                    this.startPole.sort(function(a, b) {
+                        return a - b;
+                    }) 
+                },
+                randomcolor(){
+                    return '#' + Math.floor(Math.random() * 16777215).toString(16)
+                },
+                randomfontsize(){
+                    return Math.floor(Math.random() * (18 - 9) + 9) +'px'
+                },
+
+            },
+            computed:{
+
+            },
+            watch:{
+                temp(){
+                    if (this.temp==100){console.log("победа")}
+                },
+            },
+            created(){
+                for (i=1;i<=100;i++){
+                    this.startPole.push(i)
+                }
+                this.startPole.sort(()=>{return Math.random()*2-1})
+
+            },
+            template: `
+            <h2>Игра</h2>
+            <button @click="shuffle">Перемешать</button>
+            <button @click="Startover">Начать заново</button><br>
+            <br>
+            <transition-group name="game" tag="ul" class="game">
+                <li @click="temp=n,recolor()" :class="{activeitem: a.includes(n)}" :style="{'color': randomcolor(), fontSize: randomfontsize()}" v-for="n in startPole" :key="n">{{n}}</li>
+            </transition-group>
+            
+            `
+        };
         const routes=[
             {path:"/", component:Home},
             {path:"/about", component:About},
             {path:"/contacts", component:Contacts},
+            {path:"/game", component:Game},
             {
                 path:'/products', 
                 component:Products,
