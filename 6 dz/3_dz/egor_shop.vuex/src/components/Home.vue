@@ -2,18 +2,20 @@
   <div id="home">
     <div class="top">Хиты продаж</div>
     <div class="content">
-      <div class="itemblock" v-for="(product,index) in PRODUCTS" :key="index">
-        <figure>
-          <img :src=url(product.image) alt="">
-          <figcaption>{{product.id}}</figcaption>
-        </figure>
-      </div>
+      <product 
+        v-for="(product,index) in getHits" 
+        :key="index"
+        :product="product"
+      ></product>
+
+      
     </div>
   </div>
 </template>
 
 <script>
 import {mapActions,mapGetters} from 'vuex'
+import Product from './Product'
 export default {
   data(){
     return{
@@ -21,17 +23,16 @@ export default {
     }
   },
   computed:{
-    ...mapGetters(['PRODUCTS']),   
+    ...mapGetters(['PRODUCTS','getHits']),   
   },
   
-  components:{},
+  components:{
+    'product':Product
+  },
   methods:{
     ...mapActions([
       'GET_PRODUCTS_FROM_API'
     ]),
-    url(link){
-            return "../assets/"+link
-    }
   },
   beforemount(){
   },
@@ -56,6 +57,15 @@ export default {
   height: 37px;
   width: 100%;
   text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  display: block;
+  font-family: PFDinDisplayProMedium,"Trebuchet MS";
+  font-size: 20px;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 3px 0 8px 16px;
 }
 .content{
   display: flex;
@@ -70,20 +80,5 @@ export default {
  
     
 }
-.itemblock{
-  background-color:white ;
-  width: 386px;
-  height: 142px;
-  margin: 5px 0px 5px 0px;
-  padding: 0px 0px 0px 0px;
-  border-radius: 5px;
-  border: 1px solid #d2d2d2;
-}
-img{
-  width: 100px;
-  height: 100px;
-}
-figure{
-  margin: 0px;
-}
+
 </style>

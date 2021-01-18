@@ -41,5 +41,17 @@ export default {
 #middle{
   display: flex;
   width: 100%;
+  background-color: #fff;
+  margin-top: -18px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+}
+body{
+  margin: 0px;
+  background: url(./assets/bg_sprite.png) repeat-x 0 -104px;
+  font: 13px PFDinDisplayProMedium,"Trebuchet MS",Arial,Verdana,Helvetica;
 }
 </style>

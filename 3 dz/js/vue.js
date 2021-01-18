@@ -1,18 +1,16 @@
 let app=Vue.createApp({
     data(){
         return {
-        defaultText: "Кликни на текст что бы изменить",
-        display:true,
-        titleSearch:"фыв",
-        posts:[],
+            defaultText: "Кликни на текст что бы изменить",
+            display:true,
+            titleSearch:"фыв",
+            posts:[],
         }
         
     },
     methods:{
-        swap(event){
+        swap(){
             this.display=!this.display
-            console.log(event.path[0])
-            console.log(event)
         },
     },
     mounted(){ 

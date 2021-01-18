@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Egor",
+        "surname": "Yagupov",
+        "description": "Это я",
+        "telephone":89215608382
+    },
+    {
+        "name": "Pasha",
+        "surname": "Smorodkin",
+        "description": "Это Паша",
+        "telephone":89213575214
+    },
+    {
+        "name": "Petr",
+        "surname": "Ivanov",
+        "description": "Это Петр",
+        "telephone":89219586348
+    }
+]

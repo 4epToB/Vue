@@ -8,9 +8,6 @@
           </ul>
         </li>
     </ul>
-    {{filteredCategory}}
-    <button @click="filteredSecondtest()">asdsa</button>
-    {{test}}
   </div>
 </template>
 

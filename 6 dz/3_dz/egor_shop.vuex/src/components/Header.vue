@@ -13,7 +13,7 @@
             </ul>
         </div>
         <div id="main-board">
-            <router-link to="/"><img src="../assets/logo.png" alt="Сеть компьютерных магазинов Геральд"></router-link>
+            <router-link class="logo" to="/"><img  src="../assets/logo.png" alt="Сеть компьютерных магазинов Геральд"></router-link>
         </div>
     </header>
 </template>
@@ -40,26 +40,34 @@
 }
 header{
     width: 100%;
+    height: 146px;
     margin: 0 auto;
 }
 ul{
     list-style-type: disc;
-     padding: 0;
-     display: flex;
-     border: 1px solid black;
-     margin:0px;
+    padding-left: 0;
+    display: flex;
+    margin:0px;
 }
 li{
-    padding: 0;
+    height: 30.8px;
+    line-height: 30.8px;
     list-style: none;
     text-align: center;
 }
 li a, li span{
-    padding: 8px 37px 6px;
-
+    padding: 0px 37px 0px 37px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    color: #000;
+    font-weight: 400;
+    list-style: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    
 }
 #main-board{
-    border: 1px solid black;
-    padding: 10px;
+    padding: 18.2px;
 }
+
 </style>

@@ -4,120 +4,144 @@
     {
       "image": "1.png",
       "name": "Видеокарта nVidia GeForce RTX3090 Palit GamingPro OC 24Gb (NED3090S19SB-132BA)",
-      "price": 155.200,
+      "price": 155200,
       "id": "123412",
       "available": 3,
       "category": "Видеокарты",
-      "manufacturer":"Nvidia"
+      "manufacturer":"Nvidia",
+      "description":"PCI-E 3.0, ядро - 1200 МГц, Boost - 1455 МГц, память - 12 Гб HBM2 850 МГц, 3072 бит, HDMI, 3xDisplayPort, Retail",
+      "hit": true
     },
     {
-      "image": "2.jpg",
+      "image": "2.png",
       "name": "Внешняя игровая карта GeForce RTX3090 Gigabyte AORUS Gaming Box 24Gb (GV-N3090IXEB-24GD)",
-      "price": 188.750,
-      "id": "T2",
+      "price": 188750,
+      "id": "123413",
       "available": 3,
       "category": "Видеокарты",
-      "manufacturer":"Nvidia"
+      "manufacturer":"Nvidia",
+      "description":"PCI-E 3.0, ядро - 1303 МГц, Boost - 1442 МГц, память - 4 Гб GDDR5 7008 МГц, 128 бит, DVI, 2xHDMI, DisplayPort, Retail",
+      "hit": false
     },
     {
-      "image": "3.jpg",
-      "name": "T-shirt 3",
-      "price": 4200.51524,
-      "id": "T3",
+      "image": "1.png",
+      "name": "Radeon R7 240 ASUS 2Gb (R7240-2GD5-L)",
+      "price": 7810,
+      "id": "122412",
       "available": 4,
       "category": "Видеокарты",
-      "manufacturer":"AMD"
+      "manufacturer":"AMD",
+      "description":"PCI-E 3.0, ядро - 730 МГц, Boost - 780 МГц, память - 2 Гб GDDR5 4600 МГц, 128 бит, VGA, DVI, HDMI, Retail",
+      "hit": true
     },
     {
-      "image": "4.jpg",
-      "name": "T-shirt 4",
-      "price": 5300.1245512,
-      "id": "T4",
+      "image": "1.png",
+      "name": "Intel Core i9 - 9900KF BOX (без кулера)",
+      "price": 5300,
+      "id": "223412",
       "available": 3,
       "category": "Процессоры",
       "manufacturer":"Intel",
-      "Socket":"INTEL SOCKET 1151 v2"
+      "description":"Socket 1151 v2, 8-ядерный, 3600 МГц, Turbo: 5000 МГц, Coffee Lake Refresh-S, Кэш L2 - 2 Мб, Кэш L3 - 16 Мб, 14 нм, 95 Вт",
+      "Socket":"INTEL SOCKET 1151 v2",
+      "hit": false
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "2.png",
+      "name": "Intel Core i7 - 7700K OEM",
+      "price": 6500,
+      "id": "133412",
       "available": 4,
       "category": "Процессоры",
       "manufacturer":"Intel",
-      "Socket":"INTEL SOCKET 1151"
+      "description":"Socket 1151, 4-ядерный, 4200 МГц, Turbo: 4500 МГц, Kaby Lake-S, Кэш L2 - 1 Мб, Кэш L3 - 8 Мб, Intel HD Graphics 630, 14 нм, 91 Вт",
+      "Socket":"INTEL SOCKET 1151",
+      "hit": true
     },
     {
-      "image": "6.jpeg",
-      "name": "T-shirt 6",
-      "price": 8700.4124123,
-      "id": "T6",
+      "image": "2.png",
+      "name": "AMD Ryzen 5 5600X BOX",
+      "price": 8700,
+      "id": "123472",
       "available": 3,
       "category": "Процессоры",
       "manufacturer":"AMD",
-      "Socket":"AMD SOCKET AM4"
+      "description":"Socket AM4, 16-ядерный, 3500 МГц, Turbo: 4700 МГц, Matisse, Кэш L2 - 8 Мб, Кэш L3 - 64 Мб, 7 нм, 105 Вт",
+      "Socket":"AMD SOCKET AM4",
+      "hit": false
       
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "1.png",
+      "name": "AMD Ryzen 9 3950X BOX (без кулера)",
+      "price": 6500,
+      "id": "123417",
       "available": 4,
       "category": "Процессоры",
       "manufacturer":"AMD",
-      "Socket":"AMD SOCKET AM5"
+      "description":"Socket AM5, 6-ядерный, 3700 МГц, Turbo: 4600 МГц, Vermeer, Кэш L2 - 3 Мб, Кэш L3 - 32 Мб, 7 нм, 65 Вт",
+      "Socket":"AMD SOCKET AM5",
+      "hit": false
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "2.png",
+      "name": "2Tb SATA-III Toshiba L200 (HDWL120EZSTA)",
+      "price": 6500,
+      "id": "193412",
       "available": 4,
       "category": "Жесткие диски",
       "manufacturer":"Toshiba",
-      "formfactor":"2,5"
+      "description":"внутренний HDD, 2.5, 2000 Гб, SATA-III, 5400 об/мин, кэш - 128 Мб",
+      "formfactor":"2,5",
+      "hit": true
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "1.png",
+      "name": "18Tb SATA-III Seagate SkyHawk AI (ST18000VE002)",
+      "price": 6500,
+      "id": "123482",
       "available": 4,
       "category": "Жесткие диски",
       "manufacturer":"Seagate",
-      "formfactor":"3,5"
+      "description":"внутренний HDD, 3.5, 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
+      "formfactor":"3,5",
+      "hit": true
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "2.png",
+      "name": "18Tb SATA-III Seagate SkyHawk AI (ST18000VE002)",
+      "price": 6500,
+      "id": "123483",
       "available": 4,
       "category": "Жесткие диски",
       "manufacturer":"Toshiba",
-      "formfactor":"3,5"
+      "description":"внутренний HDD, 3.5, 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
+      "formfactor":"3,5",
+      "hit": false
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "2.png",
+      "name": "ASUS ROG CROSSHAIR VIII IMPACT",
+      "price": 6500,
+      "id": "123424",
       "available": 4,
       "category": "Материнские платы",
       "manufacturer":"MSI",
-      "Socket":"AMD SOCKET AM5"
+      "description":"Socket AM4, AMD X570, 2xDDR4, PCI-E 4.0, Wi-Fi, Bluetooth, 2xUSB 3.2 Gen1, 5xUSB 3.2 Gen2, USB 3.2 Gen2 Type-C, подсветка, Mini-DTX",
+      "Socket":"AMD SOCKET AM4",
+      "hit": false
     },
     {
-      "image": "5.jpg",
-      "name": "T-shirt 5",
-      "price": 6500.3522314,
-      "id": "T5",
+      "image": "1.png",
+      "name": "ASUS P10S WS",
+      "price": 6500,
+      "id": "123122",
       "available": 4,
       "category": "Материнские платы",
       "manufacturer":"ASUS",
-      "Socket":"INTEL SOCKET 1151"
+      "description":"Socket 1151, Intel C236, 4xDDR4, USB3.0, USB3.1, VGA, DVI, HDMI, DisplayPort, ATX",
+      "Socket":"INTEL SOCKET 1151",
+      "hit": true
     }
   ]
 }
