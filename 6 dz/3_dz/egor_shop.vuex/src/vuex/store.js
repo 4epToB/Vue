@@ -7,7 +7,8 @@ let store = createStore ({
   state(){
     return{
     products:[],
-    cart:[],  
+    cart:[], 
+    total:0, 
     }
   },
   mutations:{
@@ -15,7 +16,28 @@ let store = createStore ({
       state.products=products
     },
     SET_CART:(state,product)=>{
-      state.cart.push(product)
+      if(state.cart.length){
+        let productExist=false;
+        state.cart.map(function(item){
+          if(item.id==product.id){
+            productExist=true
+            if(item.quant<product.available){
+              item.quant++
+            }
+            }else{''}
+          }) 
+        if(!productExist){
+          product['quant']=1
+          state.cart.push(product)
+        }
+      }else{
+        product['quant']=1
+        state.cart.push(product)
+      }
+
+    },
+    REMOVE_CART:(state,index)=>{
+      state.cart.splice(index,1)
     }
   },
 
@@ -31,6 +53,9 @@ let store = createStore ({
     },
     ADD_TO_CART({commit},product){
       commit('SET_CART',product)
+    },
+    DELETE_FROM_CART({commit},index){
+      commit('REMOVE_CART',index)
     }
   },
   getters:{
@@ -43,6 +68,11 @@ let store = createStore ({
     },
     getCart(state){
       return state.cart
+    },
+    TOTAL(state){
+      return state.cart.map(function(item){
+        this.total=this.total+item.quant*item.price
+        })
     }
   },
 

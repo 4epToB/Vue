@@ -1,14 +1,12 @@
 <template>
   <div id="home">
-    <div class="top">Хиты продаж</div>
     <div class="content">
       <product 
         v-for="(product,index) in getHits" 
         :key="index"
         :product="product"
+        @addToCart="addToCart"
       ></product>
-
-      
     </div>
   </div>
 </template>
@@ -24,6 +22,7 @@ export default {
   },
   computed:{
     ...mapGetters(['PRODUCTS','getHits']),   
+    
   },
   
   components:{
@@ -31,8 +30,12 @@ export default {
   },
   methods:{
     ...mapActions([
-      'GET_PRODUCTS_FROM_API'
+      'GET_PRODUCTS_FROM_API',
+      'ADD_TO_CART'
     ]),
+    addToCart(product){
+      this.ADD_TO_CART(product)
+    },
   },
   beforemount(){
   },
@@ -49,8 +52,7 @@ export default {
 }
 
 #home {
-  width: 805px;
-  margin-left: 10px;
+  width: 775px;
 }
 .top{
   background: url(../assets/bg2_sprite.png) no-repeat 100% -245px;

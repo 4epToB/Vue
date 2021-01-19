@@ -7,13 +7,12 @@
         <div class="descrwrap">
             <div class="name">{{product.name}}</div>
             <div class="descr">{{product.description}}</div>
-            <div><button class="compare"></button><button class="tocart"></button>{{product.price}}</div>
+            <div><button class="compare"></button><button class="tocart" @click="addToCart"></button>{{product.price}}</div>
         </div>
       </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
   data(){
     return{
@@ -23,12 +22,15 @@ export default {
     
   },
   methods:{
-    ...mapActions([
-        'ADD_TO_CART'
-    ]),
     url(link){
         return "./img/"+link
-    }
+    },
+    addToCart(){
+      this.$emit('addToCart',this.product)
+    },
+    deleteFromCart(){
+      this.$emit('addToCart')
+    },
   },
   props:["product"],
       
@@ -40,7 +42,7 @@ export default {
 <style>
 .itemblock{
   background-color:white ;
-  width: 386px;
+  width: 371px;
   height: 142px;
   margin: 5px 0px 5px 0px;
   padding: 0px 0px 0px 0px;

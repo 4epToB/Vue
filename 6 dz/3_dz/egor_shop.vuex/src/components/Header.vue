@@ -14,11 +14,13 @@
         </div>
         <div id="main-board">
             <router-link class="logo" to="/"><img  src="../assets/logo.png" alt="Сеть компьютерных магазинов Геральд"></router-link>
+            <div class="cart-tab"><router-link to="/cart">В корзине {{getCart.length}} товаров <br>На сумму 0 рублей</router-link></div>
         </div>
     </header>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
     export default {
         components:{},
         props:['sitename',],
@@ -27,7 +29,11 @@
                 
             }
         },
-        computed:{},
+        computed:{
+            ...mapGetters([
+                'getCart'
+            ])
+        },
         methods:{},
         watch:{},
         
@@ -50,8 +56,8 @@ ul{
     margin:0px;
 }
 li{
-    height: 30.8px;
-    line-height: 30.8px;
+    height: 31x;
+    line-height: 31px;
     list-style: none;
     text-align: center;
 }
@@ -67,7 +73,30 @@ li a, li span{
     
 }
 #main-board{
-    padding: 18.2px;
+    padding: 18px 10px 18px 10px;
+    display: flex;
+
+}
+.cart-tab{
+    margin-top: 32px;
+    justify-self: end;
+    margin-left: auto;
+    width: 260px;
+    height: 48px;
+    background: url(../assets/basket.png) no-repeat 0 0;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.cart-tab a{
+    
+    width: 163px;
+    height: 38px;
+    padding: 10px 0 0 0px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    text-align: left;
 }
 
 </style>

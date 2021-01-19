@@ -3,11 +3,13 @@
     <shop-header :sitename="sitename"></shop-header>
     <div id="middle">
       <navigation id="nav"></navigation>
-      <div class="content">
+      <div class="content-wrap">
         <search></search>
-        <router-view></router-view>
+        <div class="content">
+          <div class="top">Хиты продаж</div>
+          <router-view></router-view>
+        </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -53,5 +55,29 @@ body{
   margin: 0px;
   background: url(./assets/bg_sprite.png) repeat-x 0 -104px;
   font: 13px PFDinDisplayProMedium,"Trebuchet MS",Arial,Verdana,Helvetica;
+}
+.top{
+  background: url(./assets/bg2_sprite.png) no-repeat 100% -245px;
+  height: 37px;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #fff;
+  display: block;
+  font-family: PFDinDisplayProMedium,"Trebuchet MS";
+  font-size: 20px;
+  line-height: 30px;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 3px 0 8px 16px;
+  box-sizing: border-box;
+  width: 775px;
+}
+.content-wrap{
+  padding:10px;
+}
+a {
+    color: #000;
+    text-decoration: none;
 }
 </style>

@@ -23,7 +23,6 @@ export default {
 #search {
   background-color: #e4eef4;
   width: 995px;
-  margin: 10px 10px 10px 10px;
   height: 70px;
   border-radius: 10px;
   border: 1px solid #cfcfcf;
