@@ -8,7 +8,6 @@ let store = createStore ({
     return{
     products:[],
     cart:[], 
-    total:0, 
     }
   },
   mutations:{
@@ -38,8 +37,9 @@ let store = createStore ({
     },
     REMOVE_CART:(state,index)=>{
       state.cart.splice(index,1)
-    }
+    },
   },
+
 
   actions:{
     GET_PRODUCTS_FROM_API({commit}){
@@ -69,11 +69,13 @@ let store = createStore ({
     getCart(state){
       return state.cart
     },
-    TOTAL(state){
-      return state.cart.map(function(item){
-        this.total=this.total+item.quant*item.price
-        })
-    }
+    getCategory(state){
+      return function(categoryName){
+        return state.products.filter(
+          (prod)=>{return prod.categoryName==categoryName})
+      }
+    },
+
   },
 
 

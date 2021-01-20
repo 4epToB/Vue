@@ -4,6 +4,7 @@ import Home from '../components/Home.vue'
 import Cart from '../components/Cart.vue'
 const routes=[
 	{path:"/", component:Home},
+	{path:"/:categoryName",component:Home},
 	{path:"/about", component:About},
 	{path:"/cart", component:Cart},
 ];

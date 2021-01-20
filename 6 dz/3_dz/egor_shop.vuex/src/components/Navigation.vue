@@ -2,12 +2,13 @@
   <div id="nav">
     <ul @click="filter">
         <li id='firstlvl' v-for="(catName,index) in filteredCategory" :key="index" >
-          {{catName}}
+        {{catName}}
           <ul class="open">
             <li v-for="(catName2,index) in filteredSecond(catName)" :key="index">{{catName2}}</li>
           </ul>
         </li>
     </ul>
+    <!-- {{getLinkFromCatName("Видеокарты")}} -->
   </div>
 </template>
 
@@ -16,14 +17,16 @@ import {mapActions,mapGetters} from 'vuex'
 export default {
   data(){
     return{
-        test:[],
     }
   },
   computed:{
     ...mapGetters(['PRODUCTS']),
     filteredCategory(){
       return [...new Set(this.PRODUCTS.map(it => it.category))];
-    },   
+    },
+    /* getLinkFromCatName(catName){
+      return this.PRODUCTS.filter((prod)=>{prod.category==catName})
+    }    */
   },
   
   components:{},
@@ -31,12 +34,6 @@ export default {
     ...mapActions([
       'GET_PRODUCTS_FROM_API'
     ]),
-    test2(n){
-      return n*2
-    },
-    filteredSecondtest(name){
-      return this.PRODUCTS.filter(at => new RegExp(name, "i").test(at.category))
-    },
     filteredSecond(catName){
       let tempmas=this.PRODUCTS.filter(at => new RegExp(catName, "i").test(at.category))// массив объектов с category:"catName"
       if(catName=="Видеокарты"){
@@ -94,7 +91,8 @@ li{
   padding-top: 3px;
   padding-right: 20px;
   background: url(../assets/ilmenu_plus.gif) no-repeat 100%;
-  background-position: right;
+  background-position: right 3px;
+
 }
 .open li{
   background-image: none

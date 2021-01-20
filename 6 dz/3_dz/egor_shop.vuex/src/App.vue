@@ -80,4 +80,11 @@ a {
     color: #000;
     text-decoration: none;
 }
+input{
+      border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.1) inset;
+    padding: 3px 5px;
+    color: #333;
+}
 </style>
