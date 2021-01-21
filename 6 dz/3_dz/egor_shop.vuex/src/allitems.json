@@ -99,8 +99,8 @@
       "category": "Жесткие диски",
       "categoryName":"HDD",
       "manufacturer":"Toshiba",
-      "description":"внутренний HDD, 2.5, 2000 Гб, SATA-III, 5400 об/мин, кэш - 128 Мб",
-      "formfactor":"2,5",
+      "description":"Внутренний HDD, 2.5\", 2000 Гб, SATA-III, 5400 об/мин, кэш - 128 Мб",
+      "formfactor":"2,5\"",
       "hit": true
     },
     {
@@ -112,8 +112,8 @@
       "category": "Жесткие диски",
       "categoryName":"HDD",
       "manufacturer":"Seagate",
-      "description":"внутренний HDD, 3.5, 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
-      "formfactor":"3,5",
+      "description":"Внутренний HDD, 3.5\", 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
+      "formfactor":"3,5\"",
       "hit": true
     },
     {
@@ -125,8 +125,8 @@
       "category": "Жесткие диски",
       "categoryName":"HDD",
       "manufacturer":"Toshiba",
-      "description":"внутренний HDD, 3.5, 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
-      "formfactor":"3,5",
+      "description":"Внутренний HDD, 3.5\", 18000 Гб, SATA-III, 7200 об/мин, кэш - 256 Мб",
+      "formfactor":"3,5\"",
       "hit": false
     },
     {

@@ -6,7 +6,7 @@
       <div class="content-wrap">
         <search></search>
         <div class="content">
-          <div class="top">Хиты продаж</div>
+          <div class="top">{{getPathNameFromURL}}-{{$route.params.categoryName2}}</div>
           <router-view></router-view>
         </div>
       </div>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import Header from './components/Header'
 import Search from './components/Search'
 import Navigation from './components/Navigation'
@@ -29,6 +30,19 @@ export default {
     'navigation':Navigation,
     'search':Search,
     
+  },
+  computed:{
+    ...mapGetters(['PRODUCTS']), 
+    getPathNameFromURL(){
+      if(!this.$route.params.categoryName){
+        return "Хиты продаж"
+      }else if(this.$route.params.categoryName=="/cart"){
+        return "Корзина"
+      }else{
+        return this.PRODUCTS.filter(
+          (prod)=>{return prod.categoryName==this.$route.params.categoryName})[0].category
+      }
+    },
   }
 }
 

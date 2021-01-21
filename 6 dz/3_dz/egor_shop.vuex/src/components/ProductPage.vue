@@ -1,14 +1,7 @@
 <template>
       <div class="itemblock" >
-        <figure>
-          <img :src="url(product.image)" alt="">
-          <figcaption>ID:{{product.id}}</figcaption>
-        </figure>
-        <div class="descrwrap">
-            <div class="name"><router-link :to="getFullUrl(product)" :product="product">{{product.name}}</router-link></div>
-            <div class="descr">{{product.description}}</div>
-            <div><button class="compare"></button><button class="tocart" @click="addToCart"></button>{{product.price}}</div>
-        </div>
+        {{this.$route.params.id}}
+        {{getProductById(this.$route.params.id)}}
       </div>
 </template>
 
@@ -20,10 +13,10 @@ export default {
     }
   },
   components:{
-    
+
   },
-  computed:{
-    ...mapGetters(['getFullUrl']),
+   computed:{
+    ...mapGetters(['getProductById']),
 
   },
   methods:{
@@ -37,7 +30,6 @@ export default {
       this.$emit('addToCart')
     },
   },
-  props:["product"],
       
   
 }

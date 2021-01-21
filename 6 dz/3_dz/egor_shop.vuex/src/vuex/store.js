@@ -75,7 +75,33 @@ let store = createStore ({
           (prod)=>{return prod.categoryName==categoryName})
       }
     },
-
+    getSubCategory(state){
+      return function(categoryName,categorySubName){
+        let temp=state.products.filter((prod)=>{return prod.categoryName==categoryName})
+        switch(categoryName){
+          case 'CPU': return temp.filter((prod)=>{return prod.Socket==categorySubName})
+          case 'GPU': return temp.filter((prod)=>{return prod.manufacturer==categorySubName})
+          case 'HDD': return temp.filter((prod)=>{return prod.formfactor==categorySubName})
+          case 'MB': return temp.filter((prod)=>{return prod.Socket==categorySubName})
+        }
+      }
+    },
+    getFullUrl(){
+      return function(product){
+        switch(product.categoryName){
+          case 'CPU': return "/"+product.categoryName+"/"+product.Socket+"/"+product.id
+          case 'GPU': return "/"+product.categoryName+"/"+product.manufacturer+"/"+product.id
+          case 'HDD': return "/"+product.categoryName+"/"+product.formfactor+"/"+product.id
+          case 'MB': return "/"+product.categoryName+"/"+product.Socket+"/"+product.id
+        }
+      }
+    },
+    getProductById(state){
+      return function(id){
+        return state.products.filter(
+          (prod)=>{return prod.id==id})
+      }
+    },
   },
 
 

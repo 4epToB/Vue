@@ -1,12 +1,11 @@
 <template>
   <div id="home">
     <div class="content">
-      {{$route.params.categoryName}}
-      {{getCategory($route.params.categoryName)}}
       <product 
         v-for="(product,index) in filteredProducts" 
         :key="index"
         :product="product"
+        
         @addToCart="addToCart"
       ></product>
     </div>
@@ -23,12 +22,14 @@ export default {
     }
   },
   computed:{
-    ...mapGetters(['PRODUCTS','getHits','getCategory']),   
+    ...mapGetters(['PRODUCTS','getHits','getCategory','getSubCategory']),   
     filteredProducts(){
       if(!this.$route.params.categoryName){
         return this.getHits
-      }else {
+      }else if(!this.$route.params.categoryName2){
         return this.getCategory(this.$route.params.categoryName)
+      }else {
+        return this.getSubCategory(this.$route.params.categoryName,this.$route.params.categoryName2)
       }
   }
   },

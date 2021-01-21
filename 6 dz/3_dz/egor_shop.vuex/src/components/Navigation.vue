@@ -2,13 +2,15 @@
   <div id="nav">
     <ul @click="filter">
         <li id='firstlvl' v-for="(catName,index) in filteredCategory" :key="index" >
-        {{catName}}
+        <router-link :to="getLinkFromCatName(catName)">{{catName}}</router-link>
           <ul class="open">
-            <li v-for="(catName2,index) in filteredSecond(catName)" :key="index">{{catName2}}</li>
+            <li v-for="(catName2,index) in filteredSecond(catName)" :key="index">
+              <router-link :to="getLinkFromCatName(catName)+'/'+catName2">{{catName2}}</router-link>
+            </li>
           </ul>
         </li>
     </ul>
-    <!-- {{getLinkFromCatName("Видеокарты")}} -->
+   
   </div>
 </template>
 
@@ -24,9 +26,7 @@ export default {
     filteredCategory(){
       return [...new Set(this.PRODUCTS.map(it => it.category))];
     },
-    /* getLinkFromCatName(catName){
-      return this.PRODUCTS.filter((prod)=>{prod.category==catName})
-    }    */
+
   },
   
   components:{},
@@ -47,6 +47,10 @@ export default {
         }else {
           return []
         }
+    },
+    getLinkFromCatName(catName){
+      return "/"+this.PRODUCTS.filter(
+        (prod)=>{return prod.category==catName})[0].categoryName
     },
 
   },

@@ -16,7 +16,7 @@
                 <td class="t2">
                   <span class="img-wrapper">
                     <a class="goods-thumb" href="/catalog/tovar282527.htm" title="Перейти на страницу товара">
-                      <img :src=url(item.image)>
+                      <img :src="url(item.image)">
                     </a>
                   </span>
                 </td>
@@ -30,9 +30,9 @@
                   type="number" 
                   size="2" 
                   maxlength="3" 
-                  :max=item.available
+                  :max="item.available"
                   min='0'
-                  v-model=item.quant
+                  v-model="item.quant"
                   name="kol" 
                   id="kol"
                   onblur="">
@@ -47,7 +47,7 @@
             </tr>
           </tbody>
         </table>
-
+        
       </div>
 </template>
 
