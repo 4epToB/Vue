@@ -14,7 +14,7 @@
         </div>
         <div id="main-board">
             <router-link class="logo" to="/"><img  src="../assets/logo.png" alt="Сеть компьютерных магазинов Геральд"></router-link>
-            <div class="cart-tab"><router-link to="/cart">В корзине {{getCart.length}} товаров <br>На сумму 0 рублей</router-link></div>
+            <div class="cart-tab"><router-link to="/cart">В корзине {{totalCount}} товаров <br>На сумму {{totalPrice}} рублей</router-link></div>
         </div>
     </header>
 </template>
@@ -31,7 +31,7 @@ import {mapGetters} from 'vuex'
         },
         computed:{
             ...mapGetters([
-                'getCart'
+                'totalPrice','totalCount'
             ])
         },
         methods:{},

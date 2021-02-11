@@ -5,7 +5,6 @@
         v-for="(product,index) in filteredProducts" 
         :key="index"
         :product="product"
-        
         @addToCart="addToCart"
       ></product>
     </div>

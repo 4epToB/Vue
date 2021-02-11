@@ -89,6 +89,7 @@ body{
 }
 .content-wrap{
   padding:10px;
+  width: 100%;
 }
 a {
     color: #000;

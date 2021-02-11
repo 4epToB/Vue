@@ -69,6 +69,28 @@ let store = createStore ({
     getCart(state){
       return state.cart
     },
+    totalPrice(state){
+      let total= [];
+      if (state.cart.length){    
+        for (let item of state.cart){
+          total.push(item.quant*item.price)
+        }
+        total=total.reduce(function(sum,el){
+          return sum+el
+        })
+        return total
+      } else {return 0}
+       
+    },
+    totalCount(state){
+      let total=0;
+      if (state.cart.length){    
+        for (let item of state.cart){
+          total=total+item.quant
+        }
+        return total
+      } else {return 0}
+    },
     getCategory(state){
       return function(categoryName){
         return state.products.filter(

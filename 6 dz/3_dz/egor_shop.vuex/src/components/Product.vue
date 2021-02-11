@@ -28,13 +28,10 @@ export default {
   },
   methods:{
     url(link){
-        return "./img/"+link
+        return "/img/"+link
     },
     addToCart(){
       this.$emit('addToCart',this.product)
-    },
-    deleteFromCart(){
-      this.$emit('addToCart')
     },
   },
   props:["product"],

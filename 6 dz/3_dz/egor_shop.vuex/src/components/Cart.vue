@@ -15,13 +15,13 @@
                 <td class="t1">{{item.id}}</td>
                 <td class="t2">
                   <span class="img-wrapper">
-                    <a class="goods-thumb" href="/catalog/tovar282527.htm" title="Перейти на страницу товара">
+                    <router-link class="goods-thumb" :to="getFullUrl(item)">
                       <img :src="url(item.image)">
-                    </a>
+                    </router-link>
                   </span>
                 </td>
                 <td class="t2">
-                  <a href="/catalog/tovar282527.htm" class="underline" title="Перейти на страницу товара">{{item.name}}</a>
+                  <router-link class="underline" :to="getFullUrl(item)">{{item.name}}</router-link>
                   <div class="bskt_anons">{{item.description}}</div>
                 </td>
                 <td class="t3">{{item.price}}</td>
@@ -75,21 +75,9 @@ export default {
   },
   computed:{
     ...mapGetters([
-        'getCart'
+        'getCart','totalPrice','getFullUrl'
     ]),
-    totalPrice(){
-      let total= [];
-      if (this.getCart.length){    
-        for (let item of this.getCart){
-          total.push(item.quant*item.price)
-        }
-        total=total.reduce(function(sum,el){
-          return sum+el
-        })
-        return total
-      } else {return 0}
-       
-    }
+ 
   },
   props:[
     

@@ -1,3 +1,4 @@
+/* Реализовать красивую страничку с выводом информации о товаре (например, страничка о выводе информации о ноутбуке в интернет магазине компьютерной техники) */
 let app=Vue.createApp({
     data: function(){
         return {
@@ -19,7 +20,7 @@ app.config.globalProperties.$filters={
     }
 }
 let card=app.mount("#item-card")
-
+/* Реализовать страничку с выводом информации о пользователя сайта (например, имя, фамилия, login, email, картинку аватара, и т.п.) */
 let app2=Vue.createApp({
     data: function(){
         return {
